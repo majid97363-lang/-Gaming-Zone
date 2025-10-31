@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Theft Auto IV: The Complete Edition - Gaming Zone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .game-detail-header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.85)), url('https://cdn2.unrealengine.com/Diesel%2Fproductv2%2Fgrand-theft-auto-iv-the-complete-edition%2Fhome%2FGTAIV_EGS_Landscape_2560x1440-2560x1440-6e5d815f0c1c8192e3a3c2b9c7e8c5b9e4f1a2b3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-detail-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.7), rgba(22, 33, 62, 0.6));
+            z-index: 1;
+        }
+
+        .game-detail-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .game-detail-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .game-detail-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .game-detail-content {
+            padding: 80px 0;
+        }
+
+        .game-info-section {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .game-main-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .game-main-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .game-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .game-badge {
+            background: var(--gradient);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .game-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .meta-item i {
+            color: var(--primary-color);
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .game-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .game-description p {
+            margin-bottom: 15px;
+        }
+
+        .game-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .screenshots-section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshot-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .system-requirements {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .requirement-column h4 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .requirement-list {
+            list-style: none;
+        }
+
+        .requirement-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .requirement-list i {
+            color: var(--primary-color);
+            margin-top: 3px;
+        }
+
+        .dlc-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .dlc-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .dlc-item {
+            flex: 1;
+            min-width: 200px;
+            background-color: rgba(52, 152, 219, 0.05);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .dlc-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .dlc-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .video-section {
+            margin-bottom: 60px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .game-features {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-content h4 {
+            margin-bottom: 8px;
+            color: var(--dark-color);
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <span>Gaming Zone</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="#games">الألعاب</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-menu">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- رأس صفحة تفاصيل اللعبة -->
+    <section class="game-detail-header">
+        <div class="container">
+            <h1>Grand Theft Auto IV: The Complete Edition</h1>
+            <p>استمتع بتجربة ليبيرتي سيتي الكاملة مع جميع الإضافات والمحتوى الإضافي</p>
+        </div>
+    </section>
+
+    <!-- محتوى صفحة تفاصيل اللعبة -->
+    <section class="game-detail-content">
+        <div class="container">
+            <!-- معلومات اللعبة الرئيسية -->
+            <div class="game-info-section">
+                <div class="game-main-image">
+                    <img src="https://imgproxy.eneba.games/cMTqyrB2uZnpmWzukYfLkFrTPs5BNVVYnrC7gzixn1Y/rs:fit:350/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9y/NGtjYXlMLmpwZw" alt="Grand Theft Auto IV: The Complete Edition">
+                </div>
+                <div class="game-details">
+                    <div class="game-header">
+                        <h2 class="game-title">Grand Theft Auto IV: The Complete Edition</h2>
+                        <span class="game-badge">إصدار كامل</span>
+                    </div>
+
+                    <div class="game-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>تاريخ الإصدار: 2008</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Rockstar Games</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-hdd"></i>
+                            <span>22 GB</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-globe"></i>
+                            <span>متعدد اللغات</span>
+                        </div>
+                    </div>
+
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">4.8</div>
+                            <div class="stat-label">تقييم</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">16+</div>
+                            <div class="stat-label">تصنيف عمر</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">الأكشن</div>
+                            <div class="stat-label">النوع</div>
+                        </div>
+                    </div>
+
+                    <div class="game-description">
+                        <p>انطلق في مغامرة نيكو بيليتش في مدينة ليبيرتي سيتي المليئة بالتحديات والمخاطر. Grand Theft Auto IV: The Complete Edition تشمل اللعبة الأصلية مع كل من The Lost and Damned و The Ballad of Gay Tony، مما يوفر لك تجربة GTA IV كاملة.</p>
+                        <p>استكشف مدينة ليبيرتي سيتي الواسعة، قم بمهام متنوعة، وشارك في سباقات سيارات مثيرة، واختر طريقتك في النجاح في عالم الجريمة المنظم.</p>
+                    </div>
+                    
+                    <!-- زر التحميل بعد الوصف -->
+                    <div class="download-section" style="text-align: center; margin: 30px 0;">
+                        <a href="files/Grand Theft Auto IV The Complete Edition.torrent" download class="btn-primary" style="font-size: 1.2rem; padding: 15px 30px;"><i class="fas fa-download"></i> تحميل Grand Theft Auto IV: The Complete Edition</a>
+                    </div>
+
+                    <div class="game-actions">
+                        <a href="files/Grand Theft Auto IV The Complete Edition.torrent" download class="btn-primary"><i class="fas fa-download"></i> تحميل الآن</a>
+                        <button class="btn-secondary"><i class="fas fa-heart"></i> إضافة للمفضلة</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- لقطات من اللعبة -->
+            <div class="screenshots-section">
+                <h3 class="section-title">لقطات من اللعبة</h3>
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <img src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/7963687/Nico_art.jpg?quality=90&strip=all&crop=0.93866321411232%2C0%2C98.122673571775%2C100&w=2400" alt="لعبة GTA IV">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://images.squarespace-cdn.com/content/64b9a29ce2f8b717c65126a7/49422821-3c31-43d4-a6d0-00f857d35e3d/grand+theft+auto+gta+iv+gameplay.png?format=1500w&content-type=image%2Fpng" alt="لعبة GTA IV">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/09/gta-iv-police-car-doors-open.png?q=49&fit=contain&w=750&h=422&dpr=2" alt="لعبة GTA IV">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://i.pcmag.com/imagery/articles/001VJ9VJ4UbOtCFAPZbfcqg-1.fit_lim.size_1200x630.v1579003290.jpg" alt="لعبة GTA IV">
+                    </div>
+                </div>
+            </div>
+
+            <!-- متطلبات النظام -->
+            <div class="system-requirements">
+                <h3 class="section-title">متطلبات النظام</h3>
+                <div class="requirements-grid">
+                    <div class="requirement-column">
+                        <h4>الحد الأدنى للمتطلبات</h4>
+                        <ul class="requirement-list">
+                            <li><i class="fas fa-desktop"></i> <span>نظام التشغيل: Windows 7/8/10 (64-bit)</span></li>
+                            <li><i class="fas fa-microchip"></i> <span>المعالج: Intel Core 2 Quad Q6600 / AMD Phenom 9850</span></li>
+                            <li><i class="fas fa-memory"></i> <span>الذاكرة: 4 GB RAM</span></li>
+                            <li><i class="fas fa-desktop"></i> <span>كرت الشاشة: NVIDIA 9800 GT 1GB / AMD HD 4870 1GB</span></li>
+                            <li><i class="fas fa-hdd"></i> <span>مساحة التخزين: 22 GB</span></li>
+                        </ul>
+                    </div>
+                    <div class="requirement-column">
+                        <h4>المتطلبات الموصى بها</h4>
+                        <ul class="requirement-list">
+                            <li><i class="fas fa-desktop"></i> <span>نظام التشغيل: Windows 7/8/10 (64-bit)</span></li>
+                            <li><i class="fas fa-microchip"></i> <span>المعالج: Intel Core i5-3470 / AMD X8 FX-8350</span></li>
+                            <li><i class="fas fa-memory"></i> <span>الذاكرة: 8 GB RAM</span></li>
+                            <li><i class="fas fa-desktop"></i> <span>كرت الشاشة: NVIDIA GTX 660 / AMD HD 7870</span></li>
+                            <li><i class="fas fa-hdd"></i> <span>مساحة التخزين: 22 GB</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الإضافات (DLC) -->
+            <div class="dlc-section">
+                <h3 class="section-title">محتوى إضافي</h3>
+                <div class="dlc-list">
+                    <div class="dlc-item">
+                        <div class="dlc-title">The Lost and Damned</div>
+                        <div class="dlc-description">تجربة قصة جوني كليبيتز، نائب رئيس عصابة The Lost، في عالم الجريمة والخيانة.</div>
+                    </div>
+                    <div class="dlc-item">
+                        <div class="dlc-title">The Ballad of Gay Tony</div>
+                        <div class="dlc-description">انضم إلى لويس لوبيز، حارس شخصي لمروج نادي ليلي، في مغامرات مليئة بالأكشن والدراما.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مميزات اللعبة -->
+            <div class="game-features">
+                <h3 class="section-title">مميزات اللعبة</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>عالم مفتوح واسع</h4>
+                            <p>استكشف مدينة ليبيرتي سيتي المليئة بالأحياء والمناطق المختلفة لتكتشفها.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>شخصيات لا تُنسى</h4>
+                            <p>التق بشخصيات مثيرة ومتنوعة تضفي عمقًا على قصة اللعبة.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>مجموعة واسعة من المركبات</h4>
+                            <p>اختر من بين مجموعة متنوعة من السيارات والدراجات والمروحيات.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>موسيقى متنوعة</h4>
+                            <p>استمتع بمحطات راديو متعددة مع تشكيلة واسعة من الموسيقى.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>لعب متعدد</h4>
+                            <p>شارك مع أصدقائك في أوضاع اللعب المتعدد المثيرة عبر الإنترنت.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h4>مهام وتحديات</h4>
+                            <p>استكمل المهام الرئيسية والجانبية لتحقيق النجاح في عالم الجريمة.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- تذييل الموقع -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Gaming Zone</span>
+                </div>
+                <p>جميع الحقوق محفوظة © 2023</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // قائمة التنقل المتنقلة
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // التمرير السلس
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

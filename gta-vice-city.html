@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Theft Auto Vice City - Gaming Zone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .game-detail-header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.85)), url('https://static.wikia.nocookie.net/gtawiki/images/e/ef/GTAVC_Box_Art.jpg/revision/latest?cb=20140305042113');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-detail-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.7), rgba(22, 33, 62, 0.6));
+            z-index: 1;
+        }
+
+        .game-detail-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .game-detail-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .game-detail-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .game-detail-content {
+            padding: 80px 0;
+        }
+
+        .game-info-section {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .game-main-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .game-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .game-main-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-main-image:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .game-main-image:hover .play-icon {
+            transform: scale(1);
+        }
+
+        .play-icon i {
+            font-size: 24px;
+            color: #e74c3c;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        .game-main-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .game-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .game-badge {
+            background: var(--gradient);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .game-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .meta-item i {
+            color: var(--primary-color);
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .game-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .game-description p {
+            margin-bottom: 15px;
+        }
+
+        .game-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 10px 23px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .screenshots-section {
+            margin-bottom: 60px;
+        }
+
+        .screenshot-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .screenshot-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .screenshot-item:hover .screenshot-overlay {
+            opacity: 1;
+        }
+
+        .screenshot-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshot-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .screenshot-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .game-requirements {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .requirements-tabs {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px 3px 0 0;
+        }
+
+        .requirements-content {
+            display: none;
+        }
+
+        .requirements-content.active {
+            display: block;
+        }
+
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .requirements-list li:last-child {
+            border-bottom: none;
+        }
+
+        .req-label {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .req-value {
+            color: #666;
+            text-align: left;
+        }
+
+        .game-video {
+            margin-bottom: 60px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .game-reviews {
+            margin-bottom: 60px;
+        }
+
+        .reviews-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .review-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 15px;
+            object-fit: cover;
+        }
+
+        .reviewer-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+
+        .review-date {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .review-rating {
+            margin-bottom: 15px;
+            color: #ffc107;
+        }
+
+        .review-text {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .game-related {
+            margin-bottom: 60px;
+        }
+
+        .related-games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .related-game-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .related-game-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-game-image {
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .related-game-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .related-game-card:hover .related-game-image img {
+            transform: scale(1.05);
+        }
+
+        .related-game-info {
+            padding: 15px;
+        }
+
+        .related-game-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+        }
+
+        .related-game-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* ألوان خاصة بـ GTA Vice City */
+        :root {
+            --vice-pink: #ff1493;
+            --vice-purple: #9370db;
+            --vice-blue: #00bfff;
+            --vice-yellow: #ffd700;
+            --vice-green: #32cd32;
+            --vice-dark: #1a1a2e;
+
+            --primary-color: var(--vice-pink);
+            --secondary-color: var(--vice-purple);
+            --accent-color: var(--vice-yellow);
+            --gradient: linear-gradient(135deg, var(--vice-pink), var(--vice-purple));
+            --gradient-dark: linear-gradient(135deg, var(--vice-dark), #16213e);
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <span>Gaming Zone</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="index.html#games" class="active">الألعاب</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-menu">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- رأس صفحة اللعبة -->
+    <section class="game-detail-header">
+        <div class="container">
+            <h1>Grand Theft Auto Vice City</h1>
+            <p>عد إلى الثمانينات واستمتع بعالم من الجريمة والمغامرات في مدينة فايس سيتي الساحرة</p>
+        </div>
+    </section>
+
+    <!-- محتوى صفحة اللعبة -->
+    <section class="game-detail-content">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                العودة إلى الرئيسية
+            </a>
+
+            <!-- معلومات اللعبة الرئيسية -->
+            <div class="game-info-section">
+                <div class="game-main-image">
+                    <img src="https://m.media-amazon.com/images/I/71DGWVi4WCL._AC_UF1000,1000_QL80_.jpg" alt="Grand Theft Auto Vice City">
+                    <div class="image-overlay">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-details">
+                    <div class="game-header">
+                        <h2 class="game-title">Grand Theft Auto Vice City</h2>
+                        <span class="game-badge">كلاسيكية</span>
+                    </div>
+
+                    <div class="game-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-tag"></i>
+                            <span>مغامرة، أكشن</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-download"></i>
+                            <span>2.5M تحميل</span>
+                        </div>
+                    </div>
+
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">1.5GB</div>
+                            <div class="stat-label">حجم اللعبة</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">2002</div>
+                            <div class="stat-label">سنة الإصدار</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">PC</div>
+                            <div class="stat-label">المنصة</div>
+                        </div>
+                    </div>
+
+                    <div class="game-description">
+                        <p>Grand Theft Auto: Vice City هي لعبة عالم مفتوح من تطوير Rockstar North وتقع أحداثها في مدينة فايس سيتي المستوحاة من ميامي في الثمانينات. تلعب دور تومي فيرسيتي، وهو مجرم أُطلق سراحه مؤخرًا من السجن ويبحث عن فرصته في عالم الجريمة المنظم.</p>
+                        <p>استكشف مدينة واسعة مليئة بالمهام والتحديات، قم بقيادة مجموعة متنوعة من السيارات الكلاسيكية، واستمع إلى موسيقى الثمانينات الأيقونية أثناء تنفيذك لأخطار خطيرة.</p>
+                    </div>
+
+                    <div class="game-actions" style="position: relative !important; opacity: 1 !important; transform: translateY(0) !important; margin-top: 20px !important;">
+                        <a href="files/Grand Theft Auto Vice City.torrent" class="btn-primary" style="display: inline-flex !important; visibility: visible !important; opacity: 1 !important; position: relative !important; z-index: 10 !important;" download><i class="fas fa-download"></i> تحميل اللعبة (تورنت)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- صور اللعبة -->
+            <div class="screenshots-section">
+                <div class="section-header">
+                    <h2 class="section-title">صور اللعبة</h2>
+                </div>
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <img src="https://albilad.s3.me-south-1.amazonaws.com/articles/2093f003-d046-475e-90cb-fb933db04fe1.jpg" alt="GTA Vice City Screenshot 1">
+                        <div class="screenshot-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://1gr.cz/fotky/idnes/19/052/cl5/OMA7b5a41_screenC02_bicubic.jpg" alt="GTA Vice City Screenshot 2">
+                        <div class="screenshot-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://gaming-cdn.com/images/products/352/screenshot/grand-theft-auto-vice-city-pc-spel-rockstar-europe-wallpaper-3.jpg?v=1713189737" alt="GTA Vice City Screenshot 3">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://sonatano1.wordpress.com/wp-content/uploads/2020/06/vice-city-2.jpg?w=640" alt="GTA Vice City Screenshot 4">
+                        <div class="screenshot-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- متطلبات النظام -->
+            <div class="game-requirements">
+                <h2 class="section-title">متطلبات النظام</h2>
+                <div class="requirements-tabs">
+                    <button class="tab-btn active" onclick="showTab('minimum')">الحد الأدنى</button>
+                    <button class="tab-btn" onclick="showTab('recommended')">الموصى به</button>
+                </div>
+                <div id="minimum" class="requirements-content active">
+                    <ul class="requirements-list">
+                        <li>
+                            <span class="req-label">نظام التشغيل</span>
+                            <span class="req-value">Windows 2000/XP</span>
+                        </li>
+                        <li>
+                            <span class="req-label">المعالج</span>
+                            <span class="req-value">1 GHz Intel Pentium III or AMD Athlon</span>
+                        </li>
+                        <li>
+                            <span class="req-label">الذاكرة</span>
+                            <span class="req-value">256 MB RAM</span>
+                        </li>
+                        <li>
+                            <span class="req-label">كرت الشاشة</span>
+                            <span class="req-value">32 MB DirectX 9.0 compatible</span>
+                        </li>
+                        <li>
+                            <span class="req-label">مساحة التخزين</span>
+                            <span class="req-value">1.5 GB</span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="recommended" class="requirements-content">
+                    <ul class="requirements-list">
+                        <li>
+                            <span class="req-label">نظام التشغيل</span>
+                            <span class="req-value">Windows 2000/XP</span>
+                        </li>
+                        <li>
+                            <span class="req-label">المعالج</span>
+                            <span class="req-value">1.4 GHz Intel Pentium 4 or AMD Athlon</span>
+                        </li>
+                        <li>
+                            <span class="req-label">الذاكرة</span>
+                            <span class="req-value">384 MB RAM</span>
+                        </li>
+                        <li>
+                            <span class="req-label">كرت الشاشة</span>
+                            <span class="req-value">64 MB DirectX 9.0 compatible</span>
+                        </li>
+                        <li>
+                            <span class="req-label">مساحة التخزين</span>
+                            <span class="req-value">1.5 GB</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Gaming Zone</span>
+                </div>
+                <p>&copy; 2023 Gaming Zone. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showTab(tabName) {
+            // إخفاء كل محتوى المتطلبات
+            const requirementsContents = document.querySelectorAll('.requirements-content');
+            requirementsContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // إزالة الكلاس النشط من كل الأزرار
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // إظهار المحتوى المحدد
+            document.getElementById(tabName).classList.add('active');
+
+            // إضافة الكلاس النشط للزر المحدد
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

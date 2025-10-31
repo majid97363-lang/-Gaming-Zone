@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الألعاب</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- الترويسة -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html">
+                        <h2>Golden Games</h2>
+                    </a>
+                </div>
+
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="index.html" style="color: black;">الرئيسية</a></li>
+                        <li><a href="#" class="active" style="color: black;">الألعاب</a></li>
+                        <li><a href="categories.html" style="color: black;">الفئات</a></li>
+                        <li><a href="about.html" style="color: black;">من نحن</a></li>
+                        <li><a href="contact.html" style="color: black;">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <div class="search-bar">
+                        <input type="text" placeholder="ابحث عن لعبة...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="main">
+        <section class="games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>الألعاب</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-category="all">الكل</button>
+                        <button class="filter-btn" data-category="action">أكشن</button>
+                        <button class="filter-btn" data-category="adventure">مغامرة</button>
+                        <button class="filter-btn" data-category="sports">رياضة</button>
+                        <button class="filter-btn" data-category="racing">سباق</button>
+                    </div>
+                </div>
+
+                <div class="games-grid">
+                    <!-- محاكاة ألعاب الصفحة 3 -->
+                    <div class="game-card" onclick="window.location.href='game-detail.html'">
+                        <div class="game-image">
+                            <img src="https://picsum.photos/seed/game31/400/250.jpg" alt="Game 3-1">
+                            <div class="game-image-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="game-rating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <div class="game-header">
+                                <h3>لعبة 3-1</h3>
+                            </div>
+                            <div class="game-description">
+                                وصف موجز للعبة 3-1
+                            </div>
+                            <div class="game-meta">
+                                <span class="game-category">سباق</span>
+                                <span class="game-size">55 GB</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="btn-primary"><i class="fas fa-download"></i> تحميل</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-card" onclick="window.location.href='game-detail.html'">
+                        <div class="game-image">
+                            <img src="https://picsum.photos/seed/game32/400/250.jpg" alt="Game 3-2">
+                            <div class="game-image-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="game-rating">
+                                    <i class="fas fa-star"></i> 4.3
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <div class="game-header">
+                                <h3>لعبة 3-2</h3>
+                            </div>
+                            <div class="game-description">
+                                وصف موجز للعبة 3-2
+                            </div>
+                            <div class="game-meta">
+                                <span class="game-category">أكشن</span>
+                                <span class="game-size">48 GB</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="btn-primary"><i class="fas fa-download"></i> تحميل</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-card" onclick="window.location.href='game-detail.html'">
+                        <div class="game-image">
+                            <img src="https://picsum.photos/seed/game33/400/250.jpg" alt="Game 3-3">
+                            <div class="game-image-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                                <div class="game-rating">
+                                    <i class="fas fa-star"></i> 4.5
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-info">
+                            <div class="game-header">
+                                <h3>لعبة 3-3</h3>
+                            </div>
+                            <div class="game-description">
+                                وصف موجز للعبة 3-3
+                            </div>
+                            <div class="game-meta">
+                                <span class="game-category">مغامرة</span>
+                                <span class="game-size">52 GB</span>
+                            </div>
+                            <div class="game-actions">
+                                <button class="btn-primary"><i class="fas fa-download"></i> تحميل</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <div class="pagination-info">
+                        <span>عرض 7-9 من 9 ألعاب</span>
+                    </div>
+                    <ul class="pagination-controls">
+                        <li><a href="page2.html"><i class="fas fa-chevron-right"></i></a></li>
+                        <li><a href="index.html">1</a></li>
+                        <li><a href="page2.html" class="active">2</a></li>
+                        <li><a href="javascript:void(0)" class="disabled"><i class="fas fa-chevron-left"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- التذييل -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Golden Games</h2>
+                    <p>أفضل الألعاب المجانية والمدفوعة</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>روابط سريعة</h3>
+                        <ul>
+                            <li><a href="index.html">الرئيسية</a></li>
+                            <li><a href="#">الألعاب</a></li>
+                            <li><a href="categories.html">الفئات</a></li>
+                            <li><a href="about.html">من نحن</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>الدعم</h3>
+                        <ul>
+                            <li><a href="contact.html">اتصل بنا</a></li>
+                            <li><a href="#">الأسئلة الشائعة</a></li>
+                            <li><a href="#">سياسة الخصوصية</a></li>
+                            <li><a href="#">شروط الاستخدام</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3>تابعنا</h3>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2023 Golden Games. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // فلترة الألعاب حسب الفئة
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // إزالة الكلاس النشط من جميع الأزرار
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                // إضافة الكلاس النشط للزر الذي تم النقر عليه
+                this.classList.add('active');
+
+                // هنا يمكن إضافة كود لفلترة الألعاب حسب الفئة
+                const category = this.getAttribute('data-category');
+                console.log('الفئة المختارة:', category);
+            });
+        });
+
+        // قائمة الجوال
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // البحث
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.querySelector('.search-bar input');
+            const searchBtn = document.querySelector('.search-bar button');
+            const gameCards = document.querySelectorAll('.game-card');
+
+            if (searchBtn && searchInput) {
+                searchBtn.addEventListener('click', performSearch);
+                searchInput.addEventListener('keyup', function(e) {
+                    if (e.key === 'Enter') {
+                        performSearch();
+                    }
+                });
+
+                // البحث أثناء الكتابة
+                searchInput.addEventListener('input', function() {
+                    performSearch();
+                });
+            }
+
+            function performSearch() {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                let found = false;
+                let resultsCount = 0;
+
+                // إذا كان البحث فارغًا، عرض كل الألعاب
+                if (!searchTerm) {
+                    gameCards.forEach(card => {
+                        card.style.display = 'block';
+                    });
+
+                    // إزالة رسالة عدم وجود نتائج إذا كانت موجودة
+                    const noResultsMessage = document.querySelector('.no-results-message');
+                    if (noResultsMessage) {
+                        noResultsMessage.remove();
+                    }
+                    return;
+                }
+
+                gameCards.forEach(card => {
+                    const title = card.querySelector('h3') ? card.querySelector('h3').textContent.toLowerCase() : '';
+                    const category = card.querySelector('.game-category') ? card.querySelector('.game-category').textContent.toLowerCase() : '';
+                    const description = card.querySelector('.game-description') ? card.querySelector('.game-description').textContent.toLowerCase() : '';
+
+                    if (title.includes(searchTerm) || category.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        found = true;
+                        resultsCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // عرض رسالة إذا لم يتم العثور على نتائج
+                const gamesGrid = document.querySelector('.games-grid');
+                let noResultsMessage = document.querySelector('.no-results-message');
+
+                if (!found) {
+                    if (!noResultsMessage) {
+                        noResultsMessage = document.createElement('div');
+                        noResultsMessage.className = 'no-results-message';
+                        noResultsMessage.innerHTML = `<div class="alert alert-warning" style="text-align: center; padding: 20px; margin: 20px 0; border-radius: 8px; background-color: #fff3cd; border: 1px solid #ffeeba; color: #856404;"><i class="fas fa-search"></i> لم يتم العثور على ألعاب تطابق بحثك عن "${searchInput.value}"</div>`;
+                        gamesGrid.appendChild(noResultsMessage);
+                    }
+                } else {
+                    if (noResultsMessage) {
+                        noResultsMessage.remove();
+                    }
+
+                    // عرض عدد النتائج في وحدة التحكم
+                    console.log(`تم العثور على ${resultsCount} نتيجة لبحثك عن "${searchTerm}"`);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

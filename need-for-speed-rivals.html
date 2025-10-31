@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Need for Speed Rivals - Gaming Zone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .game-detail-header {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.85)), url('https://images7.alphacoders.com/109/1096968.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-detail-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.7), rgba(22, 33, 62, 0.6));
+            z-index: 1;
+        }
+
+        .game-info-section {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-info-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #e74c3c, #c0392b);
+        }
+
+        .game-detail-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .game-detail-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .game-detail-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .game-detail-content {
+            padding: 80px 0;
+        }
+
+        .game-info-section {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 60px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .game-main-image {
+            flex: 1;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .game-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .game-main-image:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-main-image:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .game-main-image:hover .play-icon {
+            transform: scale(1);
+        }
+
+        .play-icon i {
+            font-size: 24px;
+            color: #e74c3c;
+        }
+
+        .game-main-image {
+            position: relative;
+        }
+
+        .game-main-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #e74c3c, #c0392b);
+            z-index: 1;
+        }
+
+        .game-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .game-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .game-badge {
+            background: var(--gradient);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .game-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #666;
+            background-color: rgba(231, 76, 60, 0.05);
+            padding: 8px 15px;
+            border-radius: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .meta-item:hover {
+            transform: translateY(-3px);
+            background-color: rgba(231, 76, 60, 0.1);
+        }
+
+        .meta-item i {
+            color: var(--primary-color);
+        }
+
+        .game-stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background-color: rgba(52, 152, 219, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.1);
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .game-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            position: relative;
+            padding-right: 15px;
+        }
+
+        .game-description::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, rgba(231, 76, 60, 0.1), rgba(231, 76, 60, 0.3));
+        }
+
+        .game-description p {
+            margin-bottom: 15px;
+        }
+
+        .game-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+            position: relative !important;
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .btn-primary {
+            display: inline-flex !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative !important;
+            z-index: 10 !important;
+            align-items: center;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        .game-details p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        .game-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .game-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--light-color);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        .game-meta-item i {
+            color: var(--primary-color);
+        }
+
+        .game-features {
+            margin-top: 40px;
+        }
+
+        .game-features h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .features-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .features-list i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .game-screenshots {
+            margin-bottom: 60px;
+        }
+
+        .game-screenshots h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshot-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .screenshot-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .screenshot-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .screenshot-item:hover .screenshot-overlay {
+            opacity: 1;
+        }
+
+        .screenshot-overlay i {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* تصميم النافذة المنبثقة */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 900px;
+            max-height: 80vh;
+            object-fit: contain;
+            animation: zoomIn 0.3s;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes zoomIn {
+            from {transform: translate(-50%, -50%) scale(0)}
+            to {transform: translate(-50%, -50%) scale(1)}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+
+        .game-download-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .game-download-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .game-download-section p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--text-color);
+        }
+
+        .download-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .download-info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-info-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .download-info-item span {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .download-info-item small {
+            color: var(--text-color);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .download-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .system-requirements {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 60px;
+        }
+
+        .system-requirements h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-color);
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .requirements-card {
+            background-color: var(--light-color);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .requirements-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .requirements-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .requirements-list li:last-child {
+            border-bottom: none;
+        }
+
+        .requirements-list li span:first-child {
+            font-weight: 600;
+        }
+
+        .requirements-list li span:last-child {
+            color: var(--text-color);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient);
+        }
+
+        .features-section {
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .feature-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover h3::after {
+            transform: scaleX(1);
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .requirements-section {
+            margin-bottom: 60px;
+        }
+
+        .requirement-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .requirement-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .requirement-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--gradient);
+        }
+
+        .requirement-list {
+            list-style: none;
+        }
+
+        .requirement-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .requirement-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 992px) {
+            .game-info-section {
+                flex-direction: column;
+            }
+
+            .download-info {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .game-detail-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .game-details h2 {
+                font-size: 2rem;
+            }
+
+            .game-screenshots h2,
+            .game-download-section h2,
+            .system-requirements h2 {
+                font-size: 2rem;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-gamepad"></i>
+                <span>Gaming Zone</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                </ul>
+            </nav>
+
+            <div class="user-menu">
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- رأس الصفحة -->
+    <section class="game-detail-header">
+        <div class="container">
+            <h1>Need for Speed Rivals</h1>
+            <p>انغمس في عالم سباقات الشوارع المثير حيث تتقابل الشرطة والسائقين في معارك ملحمية على طرق مدينة Redview السريعة</p>
+        </div>
+    </section>
+
+    <!-- محتوى الصفحة -->
+    <section class="game-detail-content">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                العودة إلى الرئيسية
+            </a>
+
+            <!-- قسم معلومات اللعبة -->
+            <div id="info" class="game-info-section">
+                <div class="game-main-image">
+                    <img src="https://smartcdkeys.com/image/data/products/need-speed-rivals/cover/need-speed-rivals-smartcdkeys-cheap-cd-key-cover.jpg" alt="Need for Speed Rivals">
+                    <div class="image-overlay">
+                        <div class="play-icon">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-details">
+                    <div class="game-header">
+                        <h2 class="game-title">Need for Speed Rivals</h2>
+                        <div class="game-badge">مميز</div>
+                    </div>
+
+                    <div class="game-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-tag"></i>
+                            <span>سباقات، أكشن</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-download"></i>
+                            <span>15,234 تحميل</span>
+                        </div>
+                    </div>
+
+                    <div class="game-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">30GB</div>
+                            <div class="stat-label">حجم اللعبة</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">2013</div>
+                            <div class="stat-label">سنة الإصدار</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">PC</div>
+                            <div class="stat-label">المنصة</div>
+                        </div>
+                    </div>
+
+                    <div class="game-description">
+                        <p>Need for Speed Rivals هي لعبة سباقات عالم مفتوح طورتها Ghost Games ونشرتها Electronic Arts. تدور أحداث اللعبة في مدينة خيالية تسمى Redview County حيث يمكنك اللعب كشرطي أو كسائق سباقات شوارع.</p>
+                        <p>تتميز اللعبة بنظام AllDrive الذي يدمج بين اللعب الفردي والجماعي بسلاسة، مما يسمح للاعبين بالانضمام إلى مغامرات بعضهم البعض في أي وقت. استمتع بسباقات عالية السرعة في بيئات متغيرة مع الطقس الديناميكي والتحديات المستمرة بين الشرطة والسائقين.</p>
+                    </div>
+                    <div class="game-actions">
+                        <a href="files/Need for Speed Rivals.torrent" class="btn-primary" download><i class="fas fa-download"></i> تحميل اللعبة (تورنت)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- صور اللعبة -->
+            <div id="screenshots" class="screenshots-section">
+                <div class="section-header">
+                    <h2 class="section-title">صور اللعبة</h2>
+                </div>
+                <div class="screenshots-grid">
+                    <div class="screenshot-item">
+                        <img src="https://static0.pocketlintimages.com/wordpress/wp-content/uploads/125441-games-review-need-for-speed-image1-0tv4bijF6M.jpg" alt="Need for Speed Rivals Screenshot 1">
+                        <div class="screenshot-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://www.gamerevolution.com/wp-content/uploads/sites/2/2013/12/file_62268_PS4_Shockwave_deploy.jpg" alt="Need for Speed Rivals Screenshot 2">
+                        <div class="screenshot-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://www.gamespot.com/a/uploads/original/78/787590/2379036-ci-25400544030335389.jpg" alt="Need for Speed Rivals Screenshot 3">
+                        <div class="screenshot-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="https://opiumpulses.com/uploads/product/302/extra/needforspeedrivals-2.jpg" alt="Need for Speed Rivals Screenshot 4">
+                        <div class="screenshot-overlay">
+                            <i class="fas fa-expand"></i>
+                        </div>
+                    </div>
+                
+                        </div>
+                    </div>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المميزات الرئيسية -->
+            <div class="features-section">
+                <div class="section-header">
+                    <h2 class="section-title">المميزات الرئيسية</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h3>عالم مفتوح ضخم</h3>
+                        <p>استكشف مدينة Redview County الواسعة بطرقها المتنوعة والمناظر الطبيعية الخلابة</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>أكثر من 50 سيارة فاخرة</h3>
+                        <p>اختر من بين مجموعة واسعة من السيارات الرياضية الفاخرة وقم بتخصيصها حسب رغبتك</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>نظام AllDrive</h3>
+                        <p>انغمس في تجربة لعب فريدة تدمج بين اللعب الفردي والجماعي بسلاسة</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                        <h3>تأثيرات ديناميكية للطقس</h3>
+                        <p>استمتع بتأثيرات الطقس المتغيرة التي تؤثر على طريقة لعبك وتجعل السباقات أكثر إثارة</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- متطلبات النظام -->
+            <div class="requirements-section">
+                <div class="section-header">
+                    <h2 class="section-title">متطلبات النظام</h2>
+                </div>
+                <div class="requirements-grid">
+                    <div class="requirement-card">
+                        <h3>الحد الأدنى</h3>
+                        <ul class="requirement-list">
+                            <li>نظام التشغيل: Windows Vista (Service Pack 2) 32-bit</li>
+                            <li>المعالج: Intel Core 2 Duo 2.4 GHz أو AMD Athlon X2 2.8 GHz</li>
+                            <li>الذاكرة: 4 GB RAM</li>
+                            <li>كرت الشاشة: 512 MB VRAM, DirectX 11</li>
+                            <li>مساحة التخزين: 30 GB مساحة فارغة</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-card">
+                        <h3>الموصى به</h3>
+                        <ul class="requirement-list">
+                            <li>نظام التشغيل: Windows 7 64-bit</li>
+                            <li>المعالج: Intel Core i5 3.0 GHz أو AMD Phenom II X4 3.4 GHz</li>
+                            <li>الذاكرة: 8 GB RAM</li>
+                            <li>كرت الشاشة: 1024 MB VRAM, DirectX 11</li>
+                            <li>مساحة التخزين: 30 GB مساحة فارغة</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-gamepad"></i>
+                        <span>Gaming Zone</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Gaming Zone. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

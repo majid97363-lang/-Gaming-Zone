@@ -1,0 +1,1260 @@
+/* أنماط خاصة بصفحة Need for Speed Rivals بأسلوب Ghost of Tsushima بالكامل */
+
+/* إعادة تعريف الألوان لتتناسب مع أسلوب Ghost of Tsushima بالكامل */
+:root {
+    /* ألوان Ghost of Tsushima الأساسية */
+    --tsushima-red: #b71c1c;
+    --tsushima-black: #212121;
+    --tsushima-gold: #ffc107;
+    --tsushima-leaf: #4caf50;
+    --tsushima-sky: #2196f3;
+    --tsushima-cream: #f5f5dc;
+    --tsushima-blossom: #f8bbd0;
+    --tsushima-dark-red: #880e4f;
+
+    /* ألوان Need for Speed Rivals */
+    --nfs-blue: #0084ff;
+    --nfs-orange: #ff7e00;
+
+    /* ألوان عامة */
+    --primary-color: var(--tsushima-red);
+    --secondary-color: var(--tsushima-black);
+    --accent-color: var(--tsushima-gold);
+    --dark-color: var(--tsushima-black);
+    --medium-color: #1e1e1e;
+    --light-color: var(--tsushima-cream);
+    --text-color: #333;
+    --text-light: #fff;
+    --card-bg: #ffffff;
+
+    /* تأثيرات وظلال */
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.2);
+    --tsunami-shadow: 0 5px 15px rgba(183, 28, 28, 0.3);
+    --tsunami-shadow-hover: 0 10px 25px rgba(183, 28, 28, 0.4);
+
+    /* انتقالات */
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-fast: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    /* حدود وأشكال */
+    --border-radius: 12px;
+    --border-radius-large: 20px;
+
+    /* تدرجات */
+    --gradient: linear-gradient(135deg, var(--tsushima-red), var(--nfs-blue));
+    --gradient-dark: linear-gradient(135deg, var(--tsushima-black), var(--medium-color));
+    --gradient-text: linear-gradient(135deg, var(--tsushima-red), var(--tsushima-gold));
+    --tsunami-gradient: linear-gradient(135deg, var(--tsushima-red), var(--tsushima-dark-red));
+
+    /* مسافات */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* أحجام الخطوط */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+}
+
+/* إعدادات أساسية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--tsushima-black);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: var(--transition);
+}
+
+/* تحسينات للطباعة */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    color: var(--dark-color);
+}
+
+h1 { font-size: var(--font-size-5xl); }
+h2 { font-size: var(--font-size-4xl); }
+h3 { font-size: var(--font-size-3xl); }
+h4 { font-size: var(--font-size-2xl); }
+h5 { font-size: var(--font-size-xl); }
+h6 { font-size: var(--font-size-lg); }
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* تحسينات للأزرار */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-weight: 600;
+    font-size: var(--font-size-base);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--gradient);
+    color: var(--text-light);
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* تحسينات للبطاقات */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: var(--spacing-lg);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* شريط التنقل */
+.navbar {
+    background-color: rgba(33, 33, 33, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: var(--transition);
+}
+
+.navbar.scrolled {
+    background-color: rgba(33, 33, 33, 0.98);
+    box-shadow: var(--shadow-hover);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    transition: var(--transition);
+    position: relative;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo i {
+    margin-left: var(--spacing-sm);
+    color: var(--tsushima-gold);
+    font-size: var(--font-size-2xl);
+    animation: pulse 2s infinite;
+    filter: drop-shadow(0 0 5px rgba(255, 193, 7, 0.5));
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* تحسينات للقائمة */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li {
+    margin-left: var(--spacing-lg);
+    position: relative;
+}
+
+.nav-menu ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+    position: relative;
+    padding: var(--spacing-xs) 0;
+}
+
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient);
+    transition: var(--transition);
+}
+
+.nav-menu ul li a:hover::after,
+.nav-menu ul li a.active::after {
+    width: 100%;
+}
+
+.nav-menu ul li a:hover,
+.nav-menu ul li a.active {
+    color: var(--tsushima-gold);
+}
+
+/* تحسينات لشريط البحث */
+.search-bar {
+    position: relative;
+    margin-right: var(--spacing-md);
+}
+
+.search-bar input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+    width: 200px;
+    transition: var(--transition);
+}
+
+.search-bar input:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+    width: 250px;
+    outline: none;
+}
+
+.search-bar button {
+    position: absolute;
+    left: var(--spacing-xs);
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: var(--transition);
+}
+
+.search-bar button:hover {
+    color: var(--tsushima-gold);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-light);
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* قسم البطل الخاص بالعبة بأسلوب Ghost of Tsushima بالكامل */
+.game-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: var(--spacing-xl) 0;
+    margin-top: 70px;
+}
+
+.game-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images7.alphacoders.com/109/1096968.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.6) contrast(1.2) saturate(1.2);
+    z-index: -3;
+}
+
+.game-hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, rgba(183, 28, 28, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(0, 132, 255, 0.3) 0%, transparent 50%),
+                linear-gradient(to bottom, rgba(33, 33, 33, 0.2) 0%, rgba(33, 33, 33, 0.8) 100%);
+    z-index: -2;
+}
+
+.game-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt.png');
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.game-hero-content {
+    max-width: 1200px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    z-index: 1;
+}
+
+.game-hero-badge {
+    font-family: 'Cinzel', serif;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--tsushima-gold);
+    background-color: rgba(183, 28, 28, 0.2);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--tsushima-gold);
+    text-transform: uppercase;
+}
+
+.game-hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(to right, #ffffff, var(--tsushima-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: inline-block;
+    line-height: 1.1;
+}
+
+.game-hero-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--tsushima-red), var(--tsushima-gold));
+    border-radius: 5px;
+}
+
+.game-hero-subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+    color: var(--tsushima-cream);
+    max-width: 800px;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.game-hero-content p {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.game-hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-hero-btn {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Tajawal', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.game-hero-btn-primary {
+    background: linear-gradient(90deg, var(--tsushima-red), var(--tsushima-dark-red));
+    color: var(--text-light);
+    box-shadow: var(--tsunami-shadow);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.game-hero-btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.game-hero-btn-primary::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--tsushima-gold);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.game-hero-btn-primary:hover::before {
+    transform: translateX(100%);
+}
+
+.game-hero-btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--tsunami-shadow-hover);
+}
+
+.game-hero-btn-primary:hover::after {
+    transform: scaleX(1);
+}
+
+.game-hero-btn-secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--tsushima-gold);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 0 rgba(255, 193, 7, 0.3);
+}
+
+.game-hero-btn-secondary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--tsushima-gold), var(--nfs-orange));
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.game-hero-btn-secondary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.game-hero-btn-secondary:hover::before {
+    transform: translateY(0);
+}
+
+.game-hero-btn-secondary:hover {
+    color: var(--tsushima-black);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 193, 7, 0.3);
+}
+
+.game-hero-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s;
+}
+
+.game-hero-btn:hover::before {
+    left: 100%;
+}
+
+/* قسم معلومات اللعبة بأسلوب Ghost of Tsushima بالكامل */
+.game-info-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--tsushima-cream);
+    position: relative;
+    overflow: hidden;
+}
+
+.game-info-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/sakura.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.game-info-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 30%, rgba(183, 28, 28, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 193, 7, 0.05) 0%, transparent 50%);
+    z-index: 0;
+}
+
+.game-info-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+    position: relative;
+    z-index: 1;
+}
+
+.game-info-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-xl);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(183, 28, 28, 0.1);
+}
+
+.game-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--tsushima-red), var(--tsushima-gold));
+}
+
+.game-info-card::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(183, 28, 28, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.game-info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.game-info-card-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.game-info-card h3 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.game-info-card h3 i {
+    color: var(--tsushima-red);
+}
+
+.game-info-card p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.game-info-card ul {
+    list-style: none;
+    padding-right: 0;
+}
+
+.game-info-card ul li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.game-info-card ul li:last-child {
+    border-bottom: none;
+}
+
+.game-info-card ul li i {
+    color: var(--tsushima-gold);
+}
+
+/* قسم الفيديو */
+.game-video {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--tsushima-black);
+}
+
+.game-video-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.game-video-title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-light);
+    position: relative;
+    display: inline-block;
+}
+
+.game-video-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--tsushima-red), var(--tsushima-gold));
+    border-radius: 5px;
+}
+
+.game-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow-hover);
+}
+
+.game-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* قسم لقطات الشاشة بأسلوب Ghost of Tsushima بالكامل */
+.game-screenshots {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--tsushima-black);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.game-screenshots::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt.png');
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.game-screenshots-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.game-screenshots-title {
+    text-align: center;
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-xl);
+    color: var(--text-light);
+    position: relative;
+    display: inline-block;
+}
+
+.game-screenshots-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--tsushima-red), var(--tsushima-gold));
+    border-radius: 5px;
+}
+
+.game-screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.game-screenshot {
+    position: relative;
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    height: 200px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.game-screenshot-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius-large);
+}
+
+.game-screenshot:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: var(--tsushima-gold);
+}
+
+.game-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.game-screenshot:hover img {
+    transform: scale(1.1);
+    filter: brightness(1) contrast(1.2);
+}
+
+.game-screenshot-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(183, 28, 28, 0.7));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-md);
+}
+
+.game-screenshot:hover .game-screenshot-overlay {
+    opacity: 1;
+}
+
+.game-screenshot-text {
+    color: var(--text-light);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* قسم المتطلبات */
+.game-requirements {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--tsushima-cream);
+}
+
+.game-requirements-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.game-requirements-title {
+    text-align: center;
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-xl);
+    color: var(--dark-color);
+    position: relative;
+    display: inline-block;
+}
+
+.game-requirements-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--tsushima-red), var(--tsushima-gold));
+    border-radius: 5px;
+}
+
+.game-requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.game-requirements-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow);
+    padding: var(--spacing-xl);
+    transition: var(--transition);
+    border: 1px solid rgba(183, 28, 28, 0.1);
+}
+
+.game-requirements-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+.game-requirements-card h3 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--dark-color);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.game-requirements-card h3 i {
+    color: var(--tsushima-red);
+}
+
+.game-requirements-list {
+    list-style: none;
+    padding-right: 0;
+}
+
+.game-requirements-list li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-requirements-list li:last-child {
+    border-bottom: none;
+}
+
+.game-requirements-list li span:first-child {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.game-requirements-list li span:last-child {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+/* قسم التحميل بأسلوب Ghost of Tsushima بالكامل */
+.game-download {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--tsushima-black), var(--tsushima-red));
+    color: var(--text-light);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.game-download-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.game-download-title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+    position: relative;
+    display: inline-block;
+}
+
+.game-download-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--tsushima-gold), transparent);
+    border-radius: 5px;
+}
+
+.game-download-description {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-xl);
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.game-download-info {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+.game-download-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-large);
+    min-width: 120px;
+    transition: var(--transition);
+}
+
+.game-download-stat:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.game-download-stat i {
+    font-size: var(--font-size-2xl);
+    color: var(--tsushima-gold);
+}
+
+.game-download-stat span {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+}
+
+.game-download-btn {
+    padding: 15px 40px;
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    border-radius: var(--border-radius-large);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--tsushima-red), var(--tsushima-gold));
+    color: var(--text-light);
+    box-shadow: 0 10px 20px rgba(183, 28, 28, 0.3);
+}
+
+.game-download-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.game-download-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(183, 28, 28, 0.4);
+}
+
+.game-download-btn:hover::after {
+    transform: translateX(100%);
+}
+
+/* قسم التذييل */
+.footer {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--tsushima-black);
+    color: var(--text-light);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footer-section h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--tsushima-gold);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-section ul li a {
+    color: var(--text-light);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.footer-section ul li a:hover {
+    opacity: 1;
+    color: var(--tsushima-gold);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 992px) {
+    .game-hero-content h1 {
+        font-size: 4rem;
+    }
+
+    .game-hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .game-requirements-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .game-hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .game-hero-content p {
+        font-size: 1rem;
+    }
+
+    .game-hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-hero-btn {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+
+    .game-screenshots-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .game-info-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .game-hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .game-screenshots-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .game-download-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--tsushima-black);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: var(--spacing-xl);
+        transition: left 0.3s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu ul li {
+        margin: var(--spacing-md) 0;
+    }
+}
